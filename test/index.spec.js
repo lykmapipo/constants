@@ -1,0 +1,70 @@
+import { expect } from 'chai';
+import {
+  CONTINENT_NAMES,
+  COUNTRY_NAMES,
+  COUNTRY_CODES,
+  CALLING_CODES,
+  MAP_FEATURE_DEFAULT_NATURE,
+  MAP_FEATURE_DEFAULT_FAMILY,
+  MAP_FEATURE_DEFAULT_TYPE,
+  MAP_FEATURE_NATURES,
+  MAP_FEATURE_FAMILIES,
+  MAP_FEATURE_PLACES,
+} from '../src/index';
+
+describe('constants', () => {
+  it('shoulde expose continent names', () => {
+    expect(CONTINENT_NAMES).to.exist;
+    expect(CONTINENT_NAMES).to.be.an('array');
+    expect(CONTINENT_NAMES).to.be.to.have.length.at.least(1);
+    expect(CONTINENT_NAMES).to.include('Africa');
+  });
+
+  it('shoulde expose country names', () => {
+    expect(COUNTRY_NAMES).to.exist;
+    expect(COUNTRY_NAMES).to.be.an('array');
+    expect(COUNTRY_NAMES).to.be.to.have.length.at.least(1);
+    expect(COUNTRY_NAMES).to.include('Tanzania');
+  });
+
+  it('shoulde expose country codes', () => {
+    expect(COUNTRY_CODES).to.exist;
+    expect(COUNTRY_CODES).to.be.an('array');
+    expect(COUNTRY_CODES).to.be.to.have.length.at.least(1);
+    expect(COUNTRY_CODES).to.include('TZ');
+  });
+
+  it('shoulde expose country calling codes', () => {
+    expect(CALLING_CODES).to.exist;
+    expect(CALLING_CODES).to.be.an('array');
+    expect(CALLING_CODES).to.be.to.have.length.at.least(1);
+    expect(CALLING_CODES).to.include('255');
+  });
+
+  it('shoulde expose map features default values', () => {
+    expect(MAP_FEATURE_DEFAULT_NATURE).to.be.equal('Other');
+    expect(MAP_FEATURE_DEFAULT_FAMILY).to.be.equal('Other');
+    expect(MAP_FEATURE_DEFAULT_TYPE).to.be.equal('Other');
+  });
+
+  it('shoulde expose map features natures', () => {
+    expect(MAP_FEATURE_NATURES).to.exist;
+    expect(MAP_FEATURE_NATURES).to.be.an('array');
+    expect(MAP_FEATURE_NATURES).to.be.to.have.length.at.least(1);
+    expect(MAP_FEATURE_NATURES).to.include('Boundary');
+  });
+
+  it('shoulde expose map features families', () => {
+    expect(MAP_FEATURE_FAMILIES).to.exist;
+    expect(MAP_FEATURE_FAMILIES).to.be.an('array');
+    expect(MAP_FEATURE_FAMILIES).to.be.to.have.length.at.least(1);
+    expect(MAP_FEATURE_FAMILIES).to.include('Administrative');
+  });
+
+  it('shoulde expose map feature places tags', () => {
+    expect(MAP_FEATURE_PLACES).to.exist;
+    expect(MAP_FEATURE_PLACES).to.be.an('array');
+    expect(MAP_FEATURE_PLACES).to.be.to.have.length.at.least(1);
+    expect(MAP_FEATURE_PLACES).to.include('country');
+  });
+});
