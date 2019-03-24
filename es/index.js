@@ -1,12 +1,8 @@
 import moment from 'moment-timezone';
 import { continents, countries } from 'countries-list';
-import { sortedUniq } from '@lykmapipo/common';
+import { sortedUniq, mapToUpper } from '@lykmapipo/common';
 import { getString, getStrings } from '@lykmapipo/env';
-import { values, map, keys, toUpper, flattenDeep, startCase } from 'lodash';
-
-const MAP_FEATURE_DEFAULT_NATURE = 'Other';
-const MAP_FEATURE_DEFAULT_FAMILY = 'Other';
-const MAP_FEATURE_DEFAULT_TYPE = 'Other';
+import { values, map, keys, flattenDeep, startCase } from 'lodash';
 
 /**
  * @constant DEFAULT_LOCALE
@@ -82,6 +78,66 @@ const DEFAULT_TIMEZONE =
  * // => ['Africa/Dar_es_Salaam', ...]
  */
 const TIMEZONES = sortedUniq(getStrings('TIMEZONES', moment.tz.names()));
+
+/**
+ * @constant DEFAULT_DATE_FORMAT
+ * @name DEFAULT_DATE_FORMAT
+ * @type {String}
+ * @description obtain default runtime date format
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.3.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_DATE_FORMAT } from '@lykmapipo/common';
+ * // => 'YYYY-MM-DD'
+ */
+const DEFAULT_DATE_FORMAT = getString(
+  'DEFAULT_DATE_FORMAT',
+  'YYYY-MM-DD'
+);
+
+/**
+ * @constant DEFAULT_TIME_FORMAT
+ * @name DEFAULT_TIME_FORMAT
+ * @type {String}
+ * @description obtain default runtime time format
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.3.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_TIME_FORMAT } from '@lykmapipo/common';
+ * // => 'HH:mm:ss'
+ */
+const DEFAULT_TIME_FORMAT = getString('DEFAULT_TIME_FORMAT', 'HH:mm:ss');
+
+/**
+ * @constant DEFAULT_DATETIME_FORMAT
+ * @name DEFAULT_DATETIME_FORMAT
+ * @type {String}
+ * @description obtain default runtime datetime format
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.3.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_DATETIME_FORMAT } from '@lykmapipo/common';
+ * // => 'YYYY-MM-DD HH:mm:ss'
+ */
+const DEFAULT_DATETIME_FORMAT = getString(
+  'DEFAULT_DATETIME_FORMAT',
+  'YYYY-MM-DD HH:mm:ss'
+);
 
 /**
  * @constant DEFAULT_CONTINENT_NAME
@@ -195,7 +251,7 @@ const DEFAULT_COUNTRY_CODE = getString('DEFAULT_COUNTRY_CODE', 'TZ');
  * import { COUNTRY_CODES } from '@lykmapipo/common';
  * // => ['TZ', ...]
  */
-const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
+const COUNTRY_CODES = mapToUpper(sortedUniq(keys(countries)));
 
 /**
  * @constant DEFAULT_CALLING_CODE
@@ -231,16 +287,21 @@ const DEFAULT_CALLING_CODE = getString('DEFAULT_CALLING_CODE', '255');
  * import { CALLING_CODES } from '@lykmapipo/common';
  * // => ['255', ...]
  */
-const CALLING_CODES = map(
+const CALLING_CODES = mapToUpper(
   sortedUniq(
     flattenDeep(
       map(countries, country => {
         return (country.phone || '').split(',');
       })
-    ),
-    toUpper
+    )
   )
 );
+
+const MAP_FEATURE_DEFAULT_NATURE = 'Other';
+
+const MAP_FEATURE_DEFAULT_FAMILY = 'Other';
+
+const MAP_FEATURE_DEFAULT_TYPE = 'Other';
 
 /**
  * @constant MAP_FEATURE_NATURES
@@ -457,11 +518,11 @@ const MAP_FEATURE_TYPES = map(
   startCase
 );
 
-/* disaster phases */
 const DEFAULT_DISASTER_PHASE = getString(
   'DEFAULT_DISASTER_PHASE',
   'Mitigation'
 );
+
 const DISASTER_PHASES = getStrings('DISASTER_PHASES', [
   'Mitigation',
   'Preparedness',
@@ -469,4 +530,4 @@ const DISASTER_PHASES = getStrings('DISASTER_PHASES', [
   'Recovery',
 ]);
 
-export { CALLING_CODES, CONTINENT_NAMES, COUNTRY_CODES, COUNTRY_NAMES, DEFAULT_CALLING_CODE, DEFAULT_CONTINENT_NAME, DEFAULT_COUNTRY_CODE, DEFAULT_COUNTRY_NAME, DEFAULT_DISASTER_PHASE, DEFAULT_LOCALE, DEFAULT_TIMEZONE, DISASTER_PHASES, LOCALES, MAP_FEATURE_DEFAULT_FAMILY, MAP_FEATURE_DEFAULT_NATURE, MAP_FEATURE_DEFAULT_TYPE, MAP_FEATURE_FAMILIES, MAP_FEATURE_NATURES, MAP_FEATURE_PLACES, MAP_FEATURE_TYPES, TIMEZONES };
+export { CALLING_CODES, CONTINENT_NAMES, COUNTRY_CODES, COUNTRY_NAMES, DEFAULT_CALLING_CODE, DEFAULT_CONTINENT_NAME, DEFAULT_COUNTRY_CODE, DEFAULT_COUNTRY_NAME, DEFAULT_DATETIME_FORMAT, DEFAULT_DATE_FORMAT, DEFAULT_DISASTER_PHASE, DEFAULT_LOCALE, DEFAULT_TIMEZONE, DEFAULT_TIME_FORMAT, DISASTER_PHASES, LOCALES, MAP_FEATURE_DEFAULT_FAMILY, MAP_FEATURE_DEFAULT_NATURE, MAP_FEATURE_DEFAULT_TYPE, MAP_FEATURE_FAMILIES, MAP_FEATURE_NATURES, MAP_FEATURE_PLACES, MAP_FEATURE_TYPES, TIMEZONES };
