@@ -4,10 +4,6 @@ import { mapToUpper, sortedUniq } from '@lykmapipo/common';
 import { getString, getStrings } from '@lykmapipo/env';
 import { flattenDeep, keys, map, values, startCase } from 'lodash';
 
-export const MAP_FEATURE_DEFAULT_NATURE = 'Other';
-export const MAP_FEATURE_DEFAULT_FAMILY = 'Other';
-export const MAP_FEATURE_DEFAULT_TYPE = 'Other';
-
 /**
  * @constant DEFAULT_LOCALE
  * @name DEFAULT_LOCALE
@@ -121,6 +117,27 @@ export const DEFAULT_DATE_FORMAT = getString(
  * // => 'HH:mm:ss'
  */
 export const DEFAULT_TIME_FORMAT = getString('DEFAULT_TIME_FORMAT', 'HH:mm:ss');
+
+/**
+ * @constant DEFAULT_DATETIME_FORMAT
+ * @name DEFAULT_DATETIME_FORMAT
+ * @type {String}
+ * @description obtain default runtime datetime format
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.3.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_DATETIME_FORMAT } from '@lykmapipo/common';
+ * // => 'YYYY-MM-DD HH:mm:ss'
+ */
+export const DEFAULT_DATETIME_FORMAT = getString(
+  'DEFAULT_DATETIME_FORMAT',
+  'YYYY-MM-DD HH:mm:ss'
+);
 
 /**
  * @constant DEFAULT_CONTINENT_NAME
@@ -279,6 +296,12 @@ export const CALLING_CODES = mapToUpper(
     )
   )
 );
+
+export const MAP_FEATURE_DEFAULT_NATURE = 'Other';
+
+export const MAP_FEATURE_DEFAULT_FAMILY = 'Other';
+
+export const MAP_FEATURE_DEFAULT_TYPE = 'Other';
 
 /**
  * @constant MAP_FEATURE_NATURES
@@ -495,11 +518,11 @@ export const MAP_FEATURE_TYPES = map(
   startCase
 );
 
-/* disaster phases */
 export const DEFAULT_DISASTER_PHASE = getString(
   'DEFAULT_DISASTER_PHASE',
   'Mitigation'
 );
+
 export const DISASTER_PHASES = getStrings('DISASTER_PHASES', [
   'Mitigation',
   'Preparedness',
