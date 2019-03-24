@@ -9,7 +9,103 @@ const MAP_FEATURE_DEFAULT_FAMILY = 'Other';
 const MAP_FEATURE_DEFAULT_TYPE = 'Other';
 
 /**
- * @constant
+ * @constant DEFAULT_LOCALE
+ * @name DEFAULT_LOCALE
+ * @type {String}
+ * @description obtain default runtime locale
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_LOCALE } from '@lykmapipo/common';
+ * // => 'en'
+ */
+const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
+
+/**
+ * @constant LOCALES
+ * @name LOCALES
+ * @type {String[]}
+ * @description obtain list of allowed runtime locales
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { LOCALES } from '@lykmapipo/common';
+ * // => ['en', ...]
+ */
+const LOCALES = sortedUniq(getStrings('LOCALES', DEFAULT_LOCALE));
+
+/**
+ * @constant DEFAULT_TIMEZONE
+ * @name DEFAULT_TIMEZONE
+ * @type {String}
+ * @description obtain default runtime timezone
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_TIMEZONE } from '@lykmapipo/common';
+ * // => 'Africa/Dar_es_Salaam'
+ */
+const DEFAULT_TIMEZONE =
+  getString('TZ') || // honour heroku
+  getString('DEFAULT_TIMEZONE') ||
+  moment.tz.guess();
+
+/**
+ * @constant TIMEZONES
+ * @name TIMEZONES
+ * @type {String[]}
+ * @description obtain list of allowed runtime timezones
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { TIMEZONES } from '@lykmapipo/common';
+ * // => ['Africa/Dar_es_Salaam', ...]
+ */
+const TIMEZONES = sortedUniq(getStrings('TIMEZONES', moment.tz.names()));
+
+/**
+ * @constant DEFAULT_CONTINENT_NAME
+ * @name DEFAULT_CONTINENT_NAME
+ * @type {String}
+ * @description obtain default continent name
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_CONTINENT_NAME } from '@lykmapipo/common';
+ * // => 'Africa'
+ */
+const DEFAULT_CONTINENT_NAME = getString(
+  'DEFAULT_CONTINENT_NAME',
+  'Africa'
+);
+
+/**
+ * @constant CONTINENT_NAMES
  * @name CONTINENT_NAMES
  * @type {String[]}
  * @description provide list of continent names
@@ -21,13 +117,34 @@ const MAP_FEATURE_DEFAULT_TYPE = 'Other';
  * @public
  * @example
  *
- * const { CONTINENT_NAMES } = require('@lykmapipo/common');
+ * import { CONTINENT_NAMES } from '@lykmapipo/common';
  * // => ['Africa', ...]
  */
 const CONTINENT_NAMES = sortedUniq([...values(continents)]);
 
 /**
- * @constant
+ * @constant DEFAULT_COUNTRY_NAME
+ * @name DEFAULT_COUNTRY_NAME
+ * @type {String}
+ * @description obtain default country name
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_COUNTRY_NAME } from '@lykmapipo/common';
+ * // => 'Tanzania'
+ */
+const DEFAULT_COUNTRY_NAME = getString(
+  'DEFAULT_COUNTRY_NAME',
+  'Tanzania'
+);
+
+/**
+ * @constant COUNTRY_NAMES
  * @name COUNTRY_NAMES
  * @type {String[]}
  * @description provide list of country names
@@ -39,13 +156,31 @@ const CONTINENT_NAMES = sortedUniq([...values(continents)]);
  * @public
  * @example
  *
- * const { COUNTRY_NAMES } = require('@lykmapipo/common');
+ * import { COUNTRY_NAMES } from '@lykmapipo/common';
  * // => ['Tanzania', ...]
  */
 const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
 
 /**
- * @constant
+ * @constant DEFAULT_COUNTRY_CODE
+ * @name DEFAULT_COUNTRY_CODE
+ * @type {String}
+ * @description obtain default country code
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_COUNTRY_CODE } from '@lykmapipo/common';
+ * // => 'TZ'
+ */
+const DEFAULT_COUNTRY_CODE = getString('DEFAULT_COUNTRY_CODE', 'TZ');
+
+/**
+ * @constant COUNTRY_CODES
  * @name COUNTRY_CODES
  * @type {String[]}
  * @description provide list of country codes
@@ -57,13 +192,31 @@ const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
  * @public
  * @example
  *
- * const { COUNTRY_CODES } = require('@lykmapipo/common');
+ * import { COUNTRY_CODES } from '@lykmapipo/common';
  * // => ['TZ', ...]
  */
 const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
 
 /**
- * @constant
+ * @constant DEFAULT_CALLING_CODE
+ * @name DEFAULT_CALLING_CODE
+ * @type {String}
+ * @description obtain default country calling code
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_CALLING_CODE } from '@lykmapipo/common';
+ * // => '255'
+ */
+const DEFAULT_CALLING_CODE = getString('DEFAULT_CALLING_CODE', '255');
+
+/**
+ * @constant CALLING_CODES
  * @name CALLING_CODES
  * @type {String[]}
  * @description provide list of country calling codes
@@ -75,7 +228,7 @@ const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
  * @public
  * @example
  *
- * const { CALLING_CODES } = require('@lykmapipo/common');
+ * import { CALLING_CODES } from '@lykmapipo/common';
  * // => ['255', ...]
  */
 const CALLING_CODES = map(
@@ -90,7 +243,7 @@ const CALLING_CODES = map(
 );
 
 /**
- * @constant
+ * @constant MAP_FEATURE_NATURES
  * @name MAP_FEATURE_NATURES
  * @type {String[]}
  * @description provide map feature natures as per OSM primary map
@@ -104,7 +257,7 @@ const CALLING_CODES = map(
  * @public
  * @example
  *
- * const { MAP_FEATURE_NATURES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_NATURES } from '@lykmapipo/common';
  * // => ['Boundary', ...]
  */
 const MAP_FEATURE_NATURES = sortedUniq([
@@ -130,7 +283,7 @@ const MAP_FEATURE_NATURES = sortedUniq([
 ]);
 
 /**
- * @constant
+ * @constant MAP_FEATURE_FAMILIES
  * @name MAP_FEATURE_FAMILIES
  * @type {String[]}
  * @description provide map feature family as per OSM primary map
@@ -144,7 +297,7 @@ const MAP_FEATURE_NATURES = sortedUniq([
  * @public
  * @example
  *
- * const { MAP_FEATURE_FAMILIES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_FAMILIES } from '@lykmapipo/common';
  * // => ['Administrative', ...]
  */
 const MAP_FEATURE_FAMILIES = sortedUniq([
@@ -222,7 +375,7 @@ const MAP_FEATURE_FAMILIES = sortedUniq([
 ]);
 
 /**
- * @constant
+ * @constant MAP_FEATURE_PLACES
  * @name MAP_FEATURE_PLACES
  * @type {String[]}
  * @description provide map feature human readable places tags
@@ -236,7 +389,7 @@ const MAP_FEATURE_FAMILIES = sortedUniq([
  * @public
  * @example
  *
- * const { MAP_FEATURE_PLACES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_PLACES } from '@lykmapipo/common';
  * // => ['country', ...]
  */
 const MAP_FEATURE_PLACES = sortedUniq([
@@ -258,7 +411,7 @@ const MAP_FEATURE_PLACES = sortedUniq([
 ]);
 
 /**
- * @constant
+ * @constant MAP_FEATURE_TYPES
  * @name MAP_FEATURE_TYPES
  * @type {String[]}
  * @description provide map feature human readable types
@@ -272,7 +425,7 @@ const MAP_FEATURE_PLACES = sortedUniq([
  * @public
  * @example
  *
- * const { MAP_FEATURE_TYPES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_TYPES } from '@lykmapipo/common';
  * // => ['Country', ...]
  */
 const MAP_FEATURE_TYPES = map(
@@ -304,17 +457,6 @@ const MAP_FEATURE_TYPES = map(
   startCase
 );
 
-/* locales */
-const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
-const LOCALES = getStrings('LOCALES', DEFAULT_LOCALE);
-
-/* timezones */
-const DEFAULT_TIMEZONE = getString(
-  'DEFAULT_TIMEZONE',
-  moment.tz.guess()
-);
-const TIMEZONES = getStrings('TIMEZONES', moment.tz.names());
-
 /* disaster phases */
 const DEFAULT_DISASTER_PHASE = getString(
   'DEFAULT_DISASTER_PHASE',
@@ -327,4 +469,4 @@ const DISASTER_PHASES = getStrings('DISASTER_PHASES', [
   'Recovery',
 ]);
 
-export { CALLING_CODES, CONTINENT_NAMES, COUNTRY_CODES, COUNTRY_NAMES, DEFAULT_DISASTER_PHASE, DEFAULT_LOCALE, DEFAULT_TIMEZONE, DISASTER_PHASES, LOCALES, MAP_FEATURE_DEFAULT_FAMILY, MAP_FEATURE_DEFAULT_NATURE, MAP_FEATURE_DEFAULT_TYPE, MAP_FEATURE_FAMILIES, MAP_FEATURE_NATURES, MAP_FEATURE_PLACES, MAP_FEATURE_TYPES, TIMEZONES };
+export { CALLING_CODES, CONTINENT_NAMES, COUNTRY_CODES, COUNTRY_NAMES, DEFAULT_CALLING_CODE, DEFAULT_CONTINENT_NAME, DEFAULT_COUNTRY_CODE, DEFAULT_COUNTRY_NAME, DEFAULT_DISASTER_PHASE, DEFAULT_LOCALE, DEFAULT_TIMEZONE, DISASTER_PHASES, LOCALES, MAP_FEATURE_DEFAULT_FAMILY, MAP_FEATURE_DEFAULT_NATURE, MAP_FEATURE_DEFAULT_TYPE, MAP_FEATURE_FAMILIES, MAP_FEATURE_NATURES, MAP_FEATURE_PLACES, MAP_FEATURE_TYPES, TIMEZONES };
