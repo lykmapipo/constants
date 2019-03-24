@@ -35,7 +35,7 @@ describe('constants', () => {
     expect(LOCALES).to.include('en');
   });
 
-  it('shoulde expose default locale', () => {
+  it('shoulde expose default timezone', () => {
     expect(DEFAULT_TIMEZONE).to.exist;
     expect(DEFAULT_TIMEZONE).to.be.a('string');
     expect(DEFAULT_TIMEZONE).to.be.equal(moment.tz.guess());
