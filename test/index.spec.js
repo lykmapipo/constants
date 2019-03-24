@@ -5,6 +5,7 @@ import {
   LOCALES,
   DEFAULT_TIMEZONE,
   TIMEZONES,
+  DEFAULT_DATE_FORMAT,
   DEFAULT_CONTINENT_NAME,
   CONTINENT_NAMES,
   DEFAULT_COUNTRY_NAME,
@@ -46,6 +47,12 @@ describe('constants', () => {
     expect(TIMEZONES).to.be.an('array');
     expect(TIMEZONES).to.be.to.have.length.at.least(1);
     expect(TIMEZONES).to.include(...moment.tz.names());
+  });
+
+  it('shoulde expose default date format', () => {
+    expect(DEFAULT_DATE_FORMAT).to.exist;
+    expect(DEFAULT_DATE_FORMAT).to.be.a('string');
+    expect(DEFAULT_DATE_FORMAT).to.be.equal('YYYY-MM-DD');
   });
 
   it('shoulde expose default continent name', () => {

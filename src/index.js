@@ -84,6 +84,27 @@ export const DEFAULT_TIMEZONE =
 export const TIMEZONES = sortedUniq(getStrings('TIMEZONES', moment.tz.names()));
 
 /**
+ * @constant DEFAULT_DATE_FORMAT
+ * @name DEFAULT_DATE_FORMAT
+ * @type {String}
+ * @description obtain default runtime date format
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.3.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_DATE_FORMAT } from '@lykmapipo/common';
+ * // => 'YYYY-MM-DD'
+ */
+export const DEFAULT_DATE_FORMAT = getString(
+  'DEFAULT_DATE_FORMAT',
+  'YYYY-MM-DD'
+);
+
+/**
  * @constant DEFAULT_CONTINENT_NAME
  * @name DEFAULT_CONTINENT_NAME
  * @type {String}
