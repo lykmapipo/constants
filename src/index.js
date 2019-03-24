@@ -1,8 +1,8 @@
 import moment from 'moment-timezone';
 import { continents, countries } from 'countries-list';
-import { sortedUniq } from '@lykmapipo/common';
+import { mapToUpper, sortedUniq } from '@lykmapipo/common';
 import { getString, getStrings } from '@lykmapipo/env';
-import { flattenDeep, keys, map, values, startCase, toUpper } from 'lodash';
+import { flattenDeep, keys, map, values, startCase } from 'lodash';
 
 export const MAP_FEATURE_DEFAULT_NATURE = 'Other';
 export const MAP_FEATURE_DEFAULT_FAMILY = 'Other';
@@ -195,7 +195,7 @@ export const DEFAULT_COUNTRY_CODE = getString('DEFAULT_COUNTRY_CODE', 'TZ');
  * import { COUNTRY_CODES } from '@lykmapipo/common';
  * // => ['TZ', ...]
  */
-export const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
+export const COUNTRY_CODES = mapToUpper(sortedUniq(keys(countries)));
 
 /**
  * @constant DEFAULT_CALLING_CODE
@@ -231,14 +231,13 @@ export const DEFAULT_CALLING_CODE = getString('DEFAULT_CALLING_CODE', '255');
  * import { CALLING_CODES } from '@lykmapipo/common';
  * // => ['255', ...]
  */
-export const CALLING_CODES = map(
+export const CALLING_CODES = mapToUpper(
   sortedUniq(
     flattenDeep(
       map(countries, country => {
         return (country.phone || '').split(',');
       })
-    ),
-    toUpper
+    )
   )
 );
 
