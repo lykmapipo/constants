@@ -57,10 +57,10 @@ export const LOCALES = sortedUniq(getStrings('LOCALES', DEFAULT_LOCALE));
  * import { DEFAULT_TIMEZONE } from '@lykmapipo/common';
  * // => 'Africa/Dar_es_Salaam'
  */
-export const DEFAULT_TIMEZONE = getString(
-  'DEFAULT_TIMEZONE',
-  moment.tz.guess()
-);
+export const DEFAULT_TIMEZONE =
+  getString('TZ') || // honour heroku
+  getString('DEFAULT_TIMEZONE') ||
+  moment.tz.guess();
 
 /**
  * @constant TIMEZONES
