@@ -10,6 +10,7 @@ export const MAP_FEATURE_DEFAULT_TYPE = 'Other';
 
 /**
  * @constant DEFAULT_LOCALE
+ * @name DEFAULT_LOCALE
  * @type {String}
  * @description obtain default runtime locale
  * @author lally elias <lallyelias87@mail.com>
@@ -27,6 +28,7 @@ export const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
 
 /**
  * @constant LOCALES
+ * @name LOCALES
  * @type {String[]}
  * @description obtain list of allowed runtime locales
  * @author lally elias <lallyelias87@mail.com>
@@ -44,6 +46,7 @@ export const LOCALES = sortedUniq(getStrings('LOCALES', DEFAULT_LOCALE));
 
 /**
  * @constant DEFAULT_TIMEZONE
+ * @name DEFAULT_TIMEZONE
  * @type {String}
  * @description obtain default runtime timezone
  * @author lally elias <lallyelias87@mail.com>
@@ -64,6 +67,7 @@ export const DEFAULT_TIMEZONE =
 
 /**
  * @constant TIMEZONES
+ * @name TIMEZONES
  * @type {String[]}
  * @description obtain list of allowed runtime timezones
  * @author lally elias <lallyelias87@mail.com>
@@ -81,6 +85,7 @@ export const TIMEZONES = sortedUniq(getStrings('TIMEZONES', moment.tz.names()));
 
 /**
  * @constant DEFAULT_CONTINENT_NAME
+ * @name DEFAULT_CONTINENT_NAME
  * @type {String}
  * @description obtain default continent name
  * @author lally elias <lallyelias87@mail.com>
@@ -100,7 +105,7 @@ export const DEFAULT_CONTINENT_NAME = getString(
 );
 
 /**
- * @constant
+ * @constant CONTINENT_NAMES
  * @name CONTINENT_NAMES
  * @type {String[]}
  * @description provide list of continent names
@@ -119,6 +124,7 @@ export const CONTINENT_NAMES = sortedUniq([...values(continents)]);
 
 /**
  * @constant DEFAULT_COUNTRY_NAME
+ * @name DEFAULT_COUNTRY_NAME
  * @type {String}
  * @description obtain default country name
  * @author lally elias <lallyelias87@mail.com>
@@ -138,7 +144,7 @@ export const DEFAULT_COUNTRY_NAME = getString(
 );
 
 /**
- * @constant
+ * @constant COUNTRY_NAMES
  * @name COUNTRY_NAMES
  * @type {String[]}
  * @description provide list of country names
@@ -156,7 +162,7 @@ export const DEFAULT_COUNTRY_NAME = getString(
 export const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
 
 /**
- * @constant
+ * @constant COUNTRY_CODES
  * @name COUNTRY_CODES
  * @type {String[]}
  * @description provide list of country codes
@@ -174,7 +180,7 @@ export const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
 export const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
 
 /**
- * @constant
+ * @constant CALLING_CODES
  * @name CALLING_CODES
  * @type {String[]}
  * @description provide list of country calling codes
@@ -201,7 +207,7 @@ export const CALLING_CODES = map(
 );
 
 /**
- * @constant
+ * @constant MAP_FEATURE_NATURES
  * @name MAP_FEATURE_NATURES
  * @type {String[]}
  * @description provide map feature natures as per OSM primary map
@@ -241,7 +247,7 @@ export const MAP_FEATURE_NATURES = sortedUniq([
 ]);
 
 /**
- * @constant
+ * @constant MAP_FEATURE_FAMILIES
  * @name MAP_FEATURE_FAMILIES
  * @type {String[]}
  * @description provide map feature family as per OSM primary map
@@ -333,7 +339,7 @@ export const MAP_FEATURE_FAMILIES = sortedUniq([
 ]);
 
 /**
- * @constant
+ * @constant MAP_FEATURE_PLACES
  * @name MAP_FEATURE_PLACES
  * @type {String[]}
  * @description provide map feature human readable places tags
@@ -369,7 +375,7 @@ export const MAP_FEATURE_PLACES = sortedUniq([
 ]);
 
 /**
- * @constant
+ * @constant MAP_FEATURE_TYPES
  * @name MAP_FEATURE_TYPES
  * @type {String[]}
  * @description provide map feature human readable types
