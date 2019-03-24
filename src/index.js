@@ -21,14 +21,14 @@ export const MAP_FEATURE_DEFAULT_TYPE = 'Other';
  * @example
  *
  * import { DEFAULT_LOCALE } from '@lykmapipo/common';
- * // => en
+ * // => 'en'
  */
 export const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
 
 /**
  * @constant LOCALES
  * @type {String[]}
- * @description obtain allowed runtime locales
+ * @description obtain list of allowed runtime locales
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
  * @since 0.2.0
@@ -40,7 +40,44 @@ export const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
  * import { LOCALES } from '@lykmapipo/common';
  * // => ['en', ...]
  */
-export const LOCALES = getStrings('LOCALES', DEFAULT_LOCALE);
+export const LOCALES = sortedUniq(getStrings('LOCALES', DEFAULT_LOCALE));
+
+/**
+ * @constant DEFAULT_TIMEZONE
+ * @type {String}
+ * @description obtain default runtime timezone
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_TIMEZONE } from '@lykmapipo/common';
+ * // => 'Africa/Dar_es_Salaam'
+ */
+export const DEFAULT_TIMEZONE = getString(
+  'DEFAULT_TIMEZONE',
+  moment.tz.guess()
+);
+
+/**
+ * @constant TIMEZONES
+ * @type {String[]}
+ * @description obtain list of allowed runtime timezones
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { TIMEZONES } from '@lykmapipo/common';
+ * // => ['Africa/Dar_es_Salaam', ...]
+ */
+export const TIMEZONES = sortedUniq(getStrings('TIMEZONES', moment.tz.names()));
 
 /**
  * @constant
@@ -337,13 +374,6 @@ export const MAP_FEATURE_TYPES = map(
   ),
   startCase
 );
-
-/* timezones */
-export const DEFAULT_TIMEZONE = getString(
-  'DEFAULT_TIMEZONE',
-  moment.tz.guess()
-);
-export const TIMEZONES = getStrings('TIMEZONES', moment.tz.names());
 
 /* disaster phases */
 export const DEFAULT_DISASTER_PHASE = getString(
