@@ -9,6 +9,40 @@ export const MAP_FEATURE_DEFAULT_FAMILY = 'Other';
 export const MAP_FEATURE_DEFAULT_TYPE = 'Other';
 
 /**
+ * @constant DEFAULT_LOCALE
+ * @type {String}
+ * @description obtain default runtime locale
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_LOCALE } from '@lykmapipo/common';
+ * // => en
+ */
+export const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
+
+/**
+ * @constant LOCALES
+ * @type {String[]}
+ * @description obtain allowed runtime locales
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { LOCALES } from '@lykmapipo/common';
+ * // => ['en', ...]
+ */
+export const LOCALES = getStrings('LOCALES', DEFAULT_LOCALE);
+
+/**
  * @constant
  * @name CONTINENT_NAMES
  * @type {String[]}
@@ -21,7 +55,7 @@ export const MAP_FEATURE_DEFAULT_TYPE = 'Other';
  * @public
  * @example
  *
- * const { CONTINENT_NAMES } = require('@lykmapipo/common');
+ * import { CONTINENT_NAMES } from '@lykmapipo/common';
  * // => ['Africa', ...]
  */
 export const CONTINENT_NAMES = sortedUniq([...values(continents)]);
@@ -39,7 +73,7 @@ export const CONTINENT_NAMES = sortedUniq([...values(continents)]);
  * @public
  * @example
  *
- * const { COUNTRY_NAMES } = require('@lykmapipo/common');
+ * import { COUNTRY_NAMES } from '@lykmapipo/common';
  * // => ['Tanzania', ...]
  */
 export const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
@@ -57,7 +91,7 @@ export const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
  * @public
  * @example
  *
- * const { COUNTRY_CODES } = require('@lykmapipo/common');
+ * import { COUNTRY_CODES } from '@lykmapipo/common';
  * // => ['TZ', ...]
  */
 export const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
@@ -75,7 +109,7 @@ export const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
  * @public
  * @example
  *
- * const { CALLING_CODES } = require('@lykmapipo/common');
+ * import { CALLING_CODES } from '@lykmapipo/common';
  * // => ['255', ...]
  */
 export const CALLING_CODES = map(
@@ -104,7 +138,7 @@ export const CALLING_CODES = map(
  * @public
  * @example
  *
- * const { MAP_FEATURE_NATURES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_NATURES } from '@lykmapipo/common';
  * // => ['Boundary', ...]
  */
 export const MAP_FEATURE_NATURES = sortedUniq([
@@ -144,7 +178,7 @@ export const MAP_FEATURE_NATURES = sortedUniq([
  * @public
  * @example
  *
- * const { MAP_FEATURE_FAMILIES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_FAMILIES } from '@lykmapipo/common';
  * // => ['Administrative', ...]
  */
 export const MAP_FEATURE_FAMILIES = sortedUniq([
@@ -236,7 +270,7 @@ export const MAP_FEATURE_FAMILIES = sortedUniq([
  * @public
  * @example
  *
- * const { MAP_FEATURE_PLACES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_PLACES } from '@lykmapipo/common';
  * // => ['country', ...]
  */
 export const MAP_FEATURE_PLACES = sortedUniq([
@@ -272,7 +306,7 @@ export const MAP_FEATURE_PLACES = sortedUniq([
  * @public
  * @example
  *
- * const { MAP_FEATURE_TYPES } = require('@lykmapipo/common');
+ * import { MAP_FEATURE_TYPES } from '@lykmapipo/common';
  * // => ['Country', ...]
  */
 export const MAP_FEATURE_TYPES = map(
@@ -303,10 +337,6 @@ export const MAP_FEATURE_TYPES = map(
   ),
   startCase
 );
-
-/* locales */
-export const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
-export const LOCALES = getStrings('LOCALES', DEFAULT_LOCALE);
 
 /* timezones */
 export const DEFAULT_TIMEZONE = getString(

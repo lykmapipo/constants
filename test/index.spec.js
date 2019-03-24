@@ -1,5 +1,7 @@
 import { expect } from 'chai';
 import {
+  DEFAULT_LOCALE,
+  LOCALES,
   CONTINENT_NAMES,
   COUNTRY_NAMES,
   COUNTRY_CODES,
@@ -13,6 +15,19 @@ import {
 } from '../src/index';
 
 describe('constants', () => {
+  it('shoulde expose default locale', () => {
+    expect(DEFAULT_LOCALE).to.exist;
+    expect(DEFAULT_LOCALE).to.be.a('string');
+    expect(DEFAULT_LOCALE).to.be.equal('en');
+  });
+
+  it('shoulde expose locales list', () => {
+    expect(LOCALES).to.exist;
+    expect(LOCALES).to.be.an('array');
+    expect(LOCALES).to.be.to.have.length.at.least(1);
+    expect(LOCALES).to.include('en');
+  });
+
   it('shoulde expose continent names', () => {
     expect(CONTINENT_NAMES).to.exist;
     expect(CONTINENT_NAMES).to.be.an('array');
