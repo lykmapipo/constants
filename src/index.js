@@ -198,6 +198,24 @@ export const DEFAULT_COUNTRY_CODE = getString('DEFAULT_COUNTRY_CODE', 'TZ');
 export const COUNTRY_CODES = map(sortedUniq(keys(countries)), toUpper);
 
 /**
+ * @constant DEFAULT_CALLING_CODE
+ * @name DEFAULT_CALLING_CODE
+ * @type {String}
+ * @description obtain default country calling code
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_CALLING_CODE } from '@lykmapipo/common';
+ * // => '255'
+ */
+export const DEFAULT_CALLING_CODE = getString('DEFAULT_CALLING_CODE', '255');
+
+/**
  * @constant CALLING_CODES
  * @name CALLING_CODES
  * @type {String[]}

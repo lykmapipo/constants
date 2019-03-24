@@ -11,6 +11,7 @@ import {
   COUNTRY_NAMES,
   DEFAULT_COUNTRY_CODE,
   COUNTRY_CODES,
+  DEFAULT_CALLING_CODE,
   CALLING_CODES,
   MAP_FEATURE_DEFAULT_NATURE,
   MAP_FEATURE_DEFAULT_FAMILY,
@@ -84,6 +85,12 @@ describe('constants', () => {
     expect(COUNTRY_CODES).to.be.an('array');
     expect(COUNTRY_CODES).to.be.to.have.length.at.least(1);
     expect(COUNTRY_CODES).to.include('TZ');
+  });
+
+  it('shoulde expose default calling code', () => {
+    expect(DEFAULT_CALLING_CODE).to.exist;
+    expect(DEFAULT_CALLING_CODE).to.be.a('string');
+    expect(DEFAULT_CALLING_CODE).to.be.equal('255');
   });
 
   it('shoulde expose country calling codes', () => {
