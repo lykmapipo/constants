@@ -118,6 +118,26 @@ export const DEFAULT_CONTINENT_NAME = getString(
 export const CONTINENT_NAMES = sortedUniq([...values(continents)]);
 
 /**
+ * @constant DEFAULT_COUNTRY_NAME
+ * @type {String}
+ * @description obtain default country name
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_COUNTRY_NAME } from '@lykmapipo/common';
+ * // => 'Tanzania'
+ */
+export const DEFAULT_COUNTRY_NAME = getString(
+  'DEFAULT_COUNTRY_NAME',
+  'Tanzania'
+);
+
+/**
  * @constant
  * @name COUNTRY_NAMES
  * @type {String[]}

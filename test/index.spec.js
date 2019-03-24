@@ -7,6 +7,7 @@ import {
   TIMEZONES,
   DEFAULT_CONTINENT_NAME,
   CONTINENT_NAMES,
+  DEFAULT_COUNTRY_NAME,
   COUNTRY_NAMES,
   COUNTRY_CODES,
   CALLING_CODES,
@@ -56,6 +57,12 @@ describe('constants', () => {
     expect(CONTINENT_NAMES).to.be.an('array');
     expect(CONTINENT_NAMES).to.be.to.have.length.at.least(1);
     expect(CONTINENT_NAMES).to.include('Africa');
+  });
+
+  it('shoulde expose default country name', () => {
+    expect(DEFAULT_COUNTRY_NAME).to.exist;
+    expect(DEFAULT_COUNTRY_NAME).to.be.a('string');
+    expect(DEFAULT_COUNTRY_NAME).to.be.equal('Tanzania');
   });
 
   it('shoulde expose country names', () => {
