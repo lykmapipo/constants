@@ -38,7 +38,7 @@ describe('constants', () => {
   it('shoulde expose default timezone', () => {
     expect(DEFAULT_TIMEZONE).to.exist;
     expect(DEFAULT_TIMEZONE).to.be.a('string');
-    expect(DEFAULT_TIMEZONE).to.be.equal(moment.tz.guess());
+    expect(DEFAULT_TIMEZONE).to.be.oneOf([moment.tz.guess(), process.env.TZ]);
   });
 
   it('shoulde expose timezones list', () => {
