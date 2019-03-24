@@ -1,7 +1,10 @@
+import moment from 'moment-timezone';
 import { expect } from 'chai';
 import {
   DEFAULT_LOCALE,
   LOCALES,
+  DEFAULT_TIMEZONE,
+  TIMEZONES,
   CONTINENT_NAMES,
   COUNTRY_NAMES,
   COUNTRY_CODES,
@@ -26,6 +29,19 @@ describe('constants', () => {
     expect(LOCALES).to.be.an('array');
     expect(LOCALES).to.be.to.have.length.at.least(1);
     expect(LOCALES).to.include('en');
+  });
+
+  it('shoulde expose default locale', () => {
+    expect(DEFAULT_TIMEZONE).to.exist;
+    expect(DEFAULT_TIMEZONE).to.be.a('string');
+    expect(DEFAULT_TIMEZONE).to.be.equal(moment.tz.guess());
+  });
+
+  it('shoulde expose timezones list', () => {
+    expect(TIMEZONES).to.exist;
+    expect(TIMEZONES).to.be.an('array');
+    expect(TIMEZONES).to.be.to.have.length.at.least(1);
+    expect(TIMEZONES).to.include(...moment.tz.names());
   });
 
   it('shoulde expose continent names', () => {
