@@ -5,6 +5,7 @@ import {
   LOCALES,
   DEFAULT_TIMEZONE,
   TIMEZONES,
+  DEFAULT_CONTINENT_NAME,
   CONTINENT_NAMES,
   COUNTRY_NAMES,
   COUNTRY_CODES,
@@ -42,6 +43,12 @@ describe('constants', () => {
     expect(TIMEZONES).to.be.an('array');
     expect(TIMEZONES).to.be.to.have.length.at.least(1);
     expect(TIMEZONES).to.include(...moment.tz.names());
+  });
+
+  it('shoulde expose default continent name', () => {
+    expect(DEFAULT_CONTINENT_NAME).to.exist;
+    expect(DEFAULT_CONTINENT_NAME).to.be.a('string');
+    expect(DEFAULT_CONTINENT_NAME).to.be.equal('Africa');
   });
 
   it('shoulde expose continent names', () => {

@@ -80,6 +80,26 @@ export const DEFAULT_TIMEZONE =
 export const TIMEZONES = sortedUniq(getStrings('TIMEZONES', moment.tz.names()));
 
 /**
+ * @constant DEFAULT_CONTINENT_NAME
+ * @type {String}
+ * @description obtain default continent name
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_CONTINENT_NAME } from '@lykmapipo/common';
+ * // => 'Africa'
+ */
+export const DEFAULT_CONTINENT_NAME = getString(
+  'DEFAULT_CONTINENT_NAME',
+  'Africa'
+);
+
+/**
  * @constant
  * @name CONTINENT_NAMES
  * @type {String[]}
