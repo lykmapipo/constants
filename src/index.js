@@ -162,6 +162,24 @@ export const DEFAULT_COUNTRY_NAME = getString(
 export const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
 
 /**
+ * @constant DEFAULT_COUNTRY_CODE
+ * @name DEFAULT_COUNTRY_CODE
+ * @type {String}
+ * @description obtain default country code
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.2.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_COUNTRY_CODE } from '@lykmapipo/common';
+ * // => 'TZ'
+ */
+export const DEFAULT_COUNTRY_CODE = getString('DEFAULT_COUNTRY_CODE', 'TZ');
+
+/**
  * @constant COUNTRY_CODES
  * @name COUNTRY_CODES
  * @type {String[]}

@@ -9,6 +9,7 @@ import {
   CONTINENT_NAMES,
   DEFAULT_COUNTRY_NAME,
   COUNTRY_NAMES,
+  DEFAULT_COUNTRY_CODE,
   COUNTRY_CODES,
   CALLING_CODES,
   MAP_FEATURE_DEFAULT_NATURE,
@@ -70,6 +71,12 @@ describe('constants', () => {
     expect(COUNTRY_NAMES).to.be.an('array');
     expect(COUNTRY_NAMES).to.be.to.have.length.at.least(1);
     expect(COUNTRY_NAMES).to.include('Tanzania');
+  });
+
+  it('shoulde expose default country code', () => {
+    expect(DEFAULT_COUNTRY_CODE).to.exist;
+    expect(DEFAULT_COUNTRY_CODE).to.be.a('string');
+    expect(DEFAULT_COUNTRY_CODE).to.be.equal('TZ');
   });
 
   it('shoulde expose country codes', () => {
