@@ -6,6 +6,7 @@ import {
   DEFAULT_TIMEZONE,
   TIMEZONES,
   DEFAULT_DATE_FORMAT,
+  DEFAULT_TIME_FORMAT,
   DEFAULT_CONTINENT_NAME,
   CONTINENT_NAMES,
   DEFAULT_COUNTRY_NAME,
@@ -53,6 +54,12 @@ describe('constants', () => {
     expect(DEFAULT_DATE_FORMAT).to.exist;
     expect(DEFAULT_DATE_FORMAT).to.be.a('string');
     expect(DEFAULT_DATE_FORMAT).to.be.equal('YYYY-MM-DD');
+  });
+
+  it('shoulde expose default time format', () => {
+    expect(DEFAULT_TIME_FORMAT).to.exist;
+    expect(DEFAULT_TIME_FORMAT).to.be.a('string');
+    expect(DEFAULT_TIME_FORMAT).to.be.equal('HH:mm:ss');
   });
 
   it('shoulde expose default continent name', () => {

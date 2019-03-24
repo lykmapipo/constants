@@ -105,6 +105,24 @@ export const DEFAULT_DATE_FORMAT = getString(
 );
 
 /**
+ * @constant DEFAULT_TIME_FORMAT
+ * @name DEFAULT_TIME_FORMAT
+ * @type {String}
+ * @description obtain default runtime time format
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.3.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_TIME_FORMAT } from '@lykmapipo/common';
+ * // => 'HH:mm:ss'
+ */
+export const DEFAULT_TIME_FORMAT = getString('DEFAULT_TIME_FORMAT', 'HH:mm:ss');
+
+/**
  * @constant DEFAULT_CONTINENT_NAME
  * @name DEFAULT_CONTINENT_NAME
  * @type {String}
