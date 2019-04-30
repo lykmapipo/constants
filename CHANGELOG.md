@@ -1,3 +1,10 @@
+#### 0.3.2 (2019-04-30)
+
+##### Chores
+
+* **ci:**  configure commit lint script in travis ([47312712](https://github.com/lykmapipo/constants/commit/473127120680e3b714121bc581a800254d78141a))
+* **deps:**  force latest version & audit fix ([f4220ddd](https://github.com/lykmapipo/constants/commit/f4220ddd61a8bc33f12569c3668fabc3ff218fa3))
+
 #### 0.3.1 (2019-04-10)
 
 ##### Chores
