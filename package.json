@@ -63,16 +63,16 @@
     "eslint-plugin-mocha": "^5.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "generate-changelog": "^1.7.1",
-    "husky": "^2.3.0",
-    "lint-staged": "^8.1.7",
+    "husky": "^2.4.0",
+    "lint-staged": "^8.2.0",
     "mocha": "^6.1.4",
-    "prettier": "^1.17.1",
+    "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
-    "rollup": "^1.13.1"
+    "rollup": "^1.14.4"
   },
   "dependencies": {
-    "@lykmapipo/common": ">=0.19.1",
-    "@lykmapipo/env": ">=0.7.9",
+    "@lykmapipo/common": ">=0.20.0",
+    "@lykmapipo/env": ">=0.7.10",
     "countries-list": ">=2.4.2",
     "lodash": ">=4.17.11",
     "moment-timezone": ">=0.5.25"
