@@ -72,7 +72,7 @@
     "rollup": "^1.15.6"
   },
   "dependencies": {
-    "@lykmapipo/common": ">=0.21.0",
+    "@lykmapipo/common": ">=0.22.0",
     "@lykmapipo/env": ">=0.9.1",
     "countries-list": ">=2.4.2",
     "lodash": ">=4.17.11",
