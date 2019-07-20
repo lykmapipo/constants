@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lykmapipo/constants.svg?branch=master)](https://travis-ci.org/lykmapipo/constants)
 [![Dependencies Status](https://david-dm.org/lykmapipo/constants.svg?style=flat-square)](https://david-dm.org/lykmapipo/constants)
+[![Coverage Status](https://coveralls.io/repos/github/lykmapipo/constants/badge.svg?branch=master)](https://coveralls.io/github/lykmapipo/constants?branch=master)
 
 Common constants for day to day development.
 
