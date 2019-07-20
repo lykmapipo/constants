@@ -1,3 +1,15 @@
+#### 0.3.16 (2019-07-20)
+
+##### Chores
+
+* **deps:**
+  *  force latest version & audit fix ([956e290a](https://github.com/lykmapipo/constants/commit/956e290a7ff7dd7f5669713e4021273867b0e995))
+  *  add test coverage deps ([fb1be354](https://github.com/lykmapipo/constants/commit/fb1be3545023b26236818a2784b4969ca4fb0aac))
+
+##### Documentation Changes
+
+*  add test coverage status badge ([5cb25198](https://github.com/lykmapipo/constants/commit/5cb25198a11010eed8a3e861c8c1a4f52e1adf57))
+
 #### 0.3.15 (2019-07-06)
 
 ##### Chores
