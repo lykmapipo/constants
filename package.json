@@ -1,6 +1,6 @@
 {
   "name": "@lykmapipo/constants",
-  "version": "0.3.22",
+  "version": "0.3.23",
   "description": "Common constants for day to day development",
   "main": "lib/index.js",
   "module": "es/index.js",
