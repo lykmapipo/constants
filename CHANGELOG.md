@@ -1,3 +1,13 @@
+#### 0.4.0 (2019-11-11)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([8f4bcc8f](https://github.com/lykmapipo/constants/commit/8f4bcc8ff7182b44a531de05f20a6410433c6745))
+
+##### New Features
+
+*  add default city name ([702691da](https://github.com/lykmapipo/constants/commit/702691da74338bf5f5ad2ed69bd82723aa69d98b))
+
 #### 0.3.23 (2019-10-22)
 
 ##### Chores

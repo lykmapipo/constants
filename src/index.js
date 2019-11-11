@@ -311,7 +311,7 @@ export const CALLING_CODES = mapToUpper(
  * @example
  *
  * import { DEFAULT_CITY_NAME } from '@lykmapipo/common';
- * // => 'Tanzania'
+ * // => 'Dar es Salaam'
  */
 export const DEFAULT_CITY_NAME = getString(
   'DEFAULT_CITY_NAME',
