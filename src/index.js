@@ -297,6 +297,27 @@ export const CALLING_CODES = mapToUpper(
   )
 );
 
+/**
+ * @constant DEFAULT_CITY_NAME
+ * @name DEFAULT_CITY_NAME
+ * @type {String}
+ * @description obtain default city name
+ * @author lally elias <lallyelias87@mail.com>
+ * @license MIT
+ * @since 0.4.0
+ * @version 0.1.0
+ * @static
+ * @public
+ * @example
+ *
+ * import { DEFAULT_CITY_NAME } from '@lykmapipo/common';
+ * // => 'Tanzania'
+ */
+export const DEFAULT_CITY_NAME = getString(
+  'DEFAULT_CITY_NAME',
+  'Dar es Salaam'
+);
+
 export const MAP_FEATURE_DEFAULT_NATURE = 'Other';
 
 export const MAP_FEATURE_DEFAULT_FAMILY = 'Other';

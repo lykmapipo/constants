@@ -16,6 +16,7 @@ import {
   COUNTRY_CODES,
   DEFAULT_CALLING_CODE,
   CALLING_CODES,
+  DEFAULT_CITY_NAME,
   MAP_FEATURE_DEFAULT_NATURE,
   MAP_FEATURE_DEFAULT_FAMILY,
   MAP_FEATURE_DEFAULT_TYPE,
@@ -119,6 +120,12 @@ describe('constants', () => {
     expect(CALLING_CODES).to.be.an('array');
     expect(CALLING_CODES).to.be.to.have.length.at.least(1);
     expect(CALLING_CODES).to.include('255');
+  });
+
+  it('shoulde expose default city name', () => {
+    expect(DEFAULT_CITY_NAME).to.exist;
+    expect(DEFAULT_CITY_NAME).to.be.a('string');
+    expect(DEFAULT_CITY_NAME).to.be.equal('Dar es Salaam');
   });
 
   it('shoulde expose map features default values', () => {
