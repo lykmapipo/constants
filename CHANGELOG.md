@@ -1,3 +1,17 @@
+#### 0.4.1 (2019-12-16)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([26ac3de5](https://github.com/lykmapipo/constants/commit/26ac3de5861b735c12adb42e905a9b599757e628))
+
+##### Documentation Changes
+
+*  generate latest ([eb08535c](https://github.com/lykmapipo/constants/commit/eb08535ce4df91bb7565493266a9df0e233b5377))
+
+##### Refactors
+
+*  remove unused ([63c17015](https://github.com/lykmapipo/constants/commit/63c1701510833298b452af3c3d679109acaff383))
+
 #### 0.4.0 (2019-11-11)
 
 ##### Chores
