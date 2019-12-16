@@ -17,12 +17,6 @@ import {
   DEFAULT_CALLING_CODE,
   CALLING_CODES,
   DEFAULT_CITY_NAME,
-  MAP_FEATURE_DEFAULT_NATURE,
-  MAP_FEATURE_DEFAULT_FAMILY,
-  MAP_FEATURE_DEFAULT_TYPE,
-  MAP_FEATURE_NATURES,
-  MAP_FEATURE_FAMILIES,
-  MAP_FEATURE_PLACES,
 } from '../src/index';
 
 describe('constants', () => {
@@ -126,32 +120,5 @@ describe('constants', () => {
     expect(DEFAULT_CITY_NAME).to.exist;
     expect(DEFAULT_CITY_NAME).to.be.a('string');
     expect(DEFAULT_CITY_NAME).to.be.equal('Dar es Salaam');
-  });
-
-  it('shoulde expose map features default values', () => {
-    expect(MAP_FEATURE_DEFAULT_NATURE).to.be.equal('Other');
-    expect(MAP_FEATURE_DEFAULT_FAMILY).to.be.equal('Other');
-    expect(MAP_FEATURE_DEFAULT_TYPE).to.be.equal('Other');
-  });
-
-  it('shoulde expose map features natures', () => {
-    expect(MAP_FEATURE_NATURES).to.exist;
-    expect(MAP_FEATURE_NATURES).to.be.an('array');
-    expect(MAP_FEATURE_NATURES).to.be.to.have.length.at.least(1);
-    expect(MAP_FEATURE_NATURES).to.include('Boundary');
-  });
-
-  it('shoulde expose map features families', () => {
-    expect(MAP_FEATURE_FAMILIES).to.exist;
-    expect(MAP_FEATURE_FAMILIES).to.be.an('array');
-    expect(MAP_FEATURE_FAMILIES).to.be.to.have.length.at.least(1);
-    expect(MAP_FEATURE_FAMILIES).to.include('Administrative');
-  });
-
-  it('shoulde expose map feature places tags', () => {
-    expect(MAP_FEATURE_PLACES).to.exist;
-    expect(MAP_FEATURE_PLACES).to.be.an('array');
-    expect(MAP_FEATURE_PLACES).to.be.to.have.length.at.least(1);
-    expect(MAP_FEATURE_PLACES).to.include('country');
   });
 });
