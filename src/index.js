@@ -290,7 +290,7 @@ export const DEFAULT_CALLING_CODE = getString('DEFAULT_CALLING_CODE', '255');
 export const CALLING_CODES = mapToUpper(
   sortedUniq(
     flattenDeep(
-      map(countries, country => {
+      map(countries, (country) => {
         return (country.phone || '').split(',');
       })
     )
