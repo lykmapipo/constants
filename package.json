@@ -51,7 +51,7 @@
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
@@ -62,9 +62,9 @@
     "cz-conventional-changelog": "^3.3.0",
     "dot-prop": "^6.0.1",
     "doxdox": "^3.0.0",
-    "eslint": "^7.15.0",
+    "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-mocha": "^8.0.0",
     "eslint-plugin-prettier": "^3.3.0",
@@ -83,8 +83,8 @@
     "websocket-extensions": "^0.1.4"
   },
   "dependencies": {
-    "@lykmapipo/common": ">=0.42.4",
-    "@lykmapipo/env": ">=0.17.24",
+    "@lykmapipo/common": ">=0.42.5",
+    "@lykmapipo/env": ">=0.17.25",
     "countries-list": ">=2.5.6",
     "lodash": ">=4.17.20",
     "moment-timezone": ">=0.5.32"
