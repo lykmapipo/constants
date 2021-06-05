@@ -7,7 +7,7 @@ import { flattenDeep, keys, map, values } from 'lodash';
 /**
  * @constant DEFAULT_LOCALE
  * @name DEFAULT_LOCALE
- * @type {String}
+ * @type {string}
  * @description obtain default runtime locale
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -25,7 +25,7 @@ export const DEFAULT_LOCALE = getString('DEFAULT_LOCALE', 'en');
 /**
  * @constant LOCALES
  * @name LOCALES
- * @type {String[]}
+ * @type {string[]}
  * @description obtain list of allowed runtime locales
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -43,7 +43,7 @@ export const LOCALES = sortedUniq(getStrings('LOCALES', DEFAULT_LOCALE));
 /**
  * @constant DEFAULT_TIMEZONE
  * @name DEFAULT_TIMEZONE
- * @type {String}
+ * @type {string}
  * @description obtain default runtime timezone
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -64,7 +64,7 @@ export const DEFAULT_TIMEZONE =
 /**
  * @constant TIMEZONES
  * @name TIMEZONES
- * @type {String[]}
+ * @type {string[]}
  * @description obtain list of allowed runtime timezones
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -82,7 +82,7 @@ export const TIMEZONES = sortedUniq(getStrings('TIMEZONES', moment.tz.names()));
 /**
  * @constant DEFAULT_DATE_FORMAT
  * @name DEFAULT_DATE_FORMAT
- * @type {String}
+ * @type {string}
  * @description obtain default runtime date format
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -103,7 +103,7 @@ export const DEFAULT_DATE_FORMAT = getString(
 /**
  * @constant DEFAULT_TIME_FORMAT
  * @name DEFAULT_TIME_FORMAT
- * @type {String}
+ * @type {string}
  * @description obtain default runtime time format
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -121,7 +121,7 @@ export const DEFAULT_TIME_FORMAT = getString('DEFAULT_TIME_FORMAT', 'HH:mm:ss');
 /**
  * @constant DEFAULT_DATETIME_FORMAT
  * @name DEFAULT_DATETIME_FORMAT
- * @type {String}
+ * @type {string}
  * @description obtain default runtime datetime format
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -142,7 +142,7 @@ export const DEFAULT_DATETIME_FORMAT = getString(
 /**
  * @constant DEFAULT_CONTINENT_NAME
  * @name DEFAULT_CONTINENT_NAME
- * @type {String}
+ * @type {string}
  * @description obtain default continent name
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -163,7 +163,7 @@ export const DEFAULT_CONTINENT_NAME = getString(
 /**
  * @constant CONTINENT_NAMES
  * @name CONTINENT_NAMES
- * @type {String[]}
+ * @type {string[]}
  * @description provide list of continent names
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -181,7 +181,7 @@ export const CONTINENT_NAMES = sortedUniq([...values(continents)]);
 /**
  * @constant DEFAULT_COUNTRY_NAME
  * @name DEFAULT_COUNTRY_NAME
- * @type {String}
+ * @type {string}
  * @description obtain default country name
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -202,7 +202,7 @@ export const DEFAULT_COUNTRY_NAME = getString(
 /**
  * @constant COUNTRY_NAMES
  * @name COUNTRY_NAMES
- * @type {String[]}
+ * @type {string[]}
  * @description provide list of country names
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -220,7 +220,7 @@ export const COUNTRY_NAMES = sortedUniq([...map(countries, 'name')]);
 /**
  * @constant DEFAULT_COUNTRY_CODE
  * @name DEFAULT_COUNTRY_CODE
- * @type {String}
+ * @type {string}
  * @description obtain default country code
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -238,7 +238,7 @@ export const DEFAULT_COUNTRY_CODE = getString('DEFAULT_COUNTRY_CODE', 'TZ');
 /**
  * @constant COUNTRY_CODES
  * @name COUNTRY_CODES
- * @type {String[]}
+ * @type {string[]}
  * @description provide list of country codes
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -256,7 +256,7 @@ export const COUNTRY_CODES = mapToUpper(sortedUniq(keys(countries)));
 /**
  * @constant DEFAULT_CALLING_CODE
  * @name DEFAULT_CALLING_CODE
- * @type {String}
+ * @type {string}
  * @description obtain default country calling code
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -274,7 +274,7 @@ export const DEFAULT_CALLING_CODE = getString('DEFAULT_CALLING_CODE', '255');
 /**
  * @constant CALLING_CODES
  * @name CALLING_CODES
- * @type {String[]}
+ * @type {string[]}
  * @description provide list of country calling codes
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
@@ -300,7 +300,7 @@ export const CALLING_CODES = mapToUpper(
 /**
  * @constant DEFAULT_CITY_NAME
  * @name DEFAULT_CITY_NAME
- * @type {String}
+ * @type {string}
  * @description obtain default city name
  * @author lally elias <lallyelias87@mail.com>
  * @license MIT
