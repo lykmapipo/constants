@@ -1,3 +1,9 @@
+#### 0.4.42 (2021-06-10)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([2a09795d](https://github.com/lykmapipo/constants/commit/2a09795d27cf80804fc782e716dd7fc0448dcc81))
+
 #### 0.4.41 (2021-06-05)
 
 ##### Chores
