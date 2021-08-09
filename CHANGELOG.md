@@ -1,3 +1,16 @@
+#### 0.4.43 (2021-08-09)
+
+##### Chores
+
+* **deps:**
+  *  force latest version & audit fix ([286051af](https://github.com/lykmapipo/constants/commit/286051afbcbf2873632831d02cee0238a82ff9d6))
+  *  force latest version ([b2b8641a](https://github.com/lykmapipo/constants/commit/b2b8641afe5afdc48f0939f1782a6b86db4cf3f6))
+
+##### Documentation Changes
+
+* **license:**  remove year ([179be304](https://github.com/lykmapipo/constants/commit/179be304e6a11194de0548be394a72b80c74cd44))
+* **readme:**  update status badges ([b1f6d531](https://github.com/lykmapipo/constants/commit/b1f6d531ca1d33c5f604f6215e7b7336031ddaa0))
+
 #### 0.4.42 (2021-06-10)
 
 ##### Chores
