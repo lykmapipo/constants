@@ -1,6 +1,6 @@
 # constants
 
-[![Build Status](https://travis-ci.com/lykmapipo/constants.svg?branch=master)](https://travis-ci.com/lykmapipo/constants)
+[![Build Status](https://app.travis-ci.com/lykmapipo/constants.svg?branch=master)](https://app.travis-ci.com/lykmapipo/constants)
 [![Dependencies Status](https://david-dm.org/lykmapipo/constants.svg)](https://david-dm.org/lykmapipo/constants)
 [![Coverage Status](https://coveralls.io/repos/github/lykmapipo/constants/badge.svg?branch=master)](https://coveralls.io/github/lykmapipo/constants?branch=master)
 [![GitHub License](https://img.shields.io/github/license/lykmapipo/constants)](https://github.com/lykmapipo/constants/blob/master/LICENSE)
